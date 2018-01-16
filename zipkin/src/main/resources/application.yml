@@ -1,8 +1,15 @@
 spring:
   application:
     name: zipkin
-  rabbitmq:
-    host: rabbitmq
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.1.1.63:9092,10.1.1.63:9093,10.1.1.63:9094
+          zkNodes: 10.1.1.68:2181,10.1.1.68:2182,10.1.1.68:2183
+          defaultBrokerPort: 9092
+ # rabbitmq:
+ #   host: rabbitmq
 
 server:
   port: 9411
